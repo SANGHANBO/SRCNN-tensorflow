@@ -18,7 +18,7 @@ flags.DEFINE_integer("image_size", 33, "The size of image to use [33]")
 flags.DEFINE_integer("label_size", 21, "The size of label to produce [21]")
 flags.DEFINE_integer("c_dim", 1, "Dimension of image color. [1]")
 flags.DEFINE_integer("scale", 3, "The size of scale factor for preprocessing input image [3]")
-flags.DEFINE_integer('image_number', 4, "The serial number of the image in test set")       # 希望处理的测试图片编号
+flags.DEFINE_integer('image_number', 0, "The serial number of the image in test set")       # 希望处理的测试图片编号
 FLAGS = flags.FLAGS
 
 def imagecrop(image, padding):
@@ -85,19 +85,19 @@ def test(input_image, input_label):
 下面直接读取MATLAB处理得到的测试图片的内插矩阵，只进行'baby'一图的测试
 若想读取Python处理所得的内插结果，请注释掉下面的代码，并恢复注释代码
 '''
-data = glob.glob(os.path.join('checkpoint/testimage', '*.h5'))
-datapath = data[FLAGS.image_number]
-with h5py.File(datapath, 'r') as hf:
-    im_label = np.array(hf.get('origin'))
-    im_image = np.array(hf.get('bicubic'))
+# data = glob.glob(os.path.join('checkpoint/testimage', '*.h5'))
+# datapath = data[FLAGS.image_number]
+# with h5py.File(datapath, 'r') as hf:
+    # im_label = np.array(hf.get('origin'))
+    # im_image = np.array(hf.get('bicubic'))
 
-# print(FLAGS.image_number)
-# datapath = 'Test/Set5'
-# data = glob.glob(os.path.join(datapath, '*.bmp'))
-# origin_image = scipy.misc.imread(data[FLAGS.image_number], flatten=True, mode='YCbCr')    # 原图
-# origin_image = np.array(origin_image, dtype=np.float)
+print(FLAGS.image_number)
+datapath = 'Test/Set5'
+data = glob.glob(os.path.join(datapath, '*.bmp'))
+origin_image = scipy.misc.imread(data[FLAGS.image_number], flatten=True, mode='YCbCr')    # 原图
+origin_image = np.array(origin_image, dtype=np.float)
 # 预处理，获取加噪图像
-# im_image, im_label = preprocess(FLAGS, data[FLAGS.image_number])
+im_image, im_label = preprocess(FLAGS, data[FLAGS.image_number])
 
 scipy.misc.imsave('sample/orig.png', im_label)
 scipy.misc.imsave('sample/cubic.png', im_image)

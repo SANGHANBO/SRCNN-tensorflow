@@ -26,7 +26,7 @@ With train_image imported from MATLAB, the average PSNR is 32.34dB, while 32.39 
 Original woman image: <br>
 ![image](https//github.com/SANGHANBO/SRCNN-tensorflow/blob/master/sample/orig.png) <br>
 Bicubic interpolation: <br>
-![image](https//github.com/SANGHANBO/SRCNN-tensorflow/blob/master/sample/cubic.png) <br>
+![image](https//github.com/SANGHANBO/SRCNN-tensorflow/blob/master/sample/cubic.png) <br> 
 srcnn super-resolved image: <br>
 ![image](https//github.com/SANGHANBO/SRCNN-tensorflow/blob/master/sample/srcnn.png) <br>
 

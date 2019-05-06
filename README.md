@@ -1,7 +1,7 @@
 SRCNN-tensorflow
 ================
 This is a tensorflow implementation of image super-resolution using deep convolutional network.
-To refer to the original website, please click [here](http://mmlab.ie.cuhk.edu.hk/projects/SRCNN.html)
+To refer to the original website, please click [here.](http://mmlab.ie.cuhk.edu.hk/projects/SRCNN.html)
 
 Requirement
 -----------
@@ -24,11 +24,11 @@ Result
 With train_image imported from MATLAB, the average PSNR is 32.34dB, while 32.39 in paper. So my model works not bad. One sample is as follow.
 
 Original woman image:
-![](https//github.com/SANGHANBO/SRCNN-tensorflow/raw/master/sample/orig.png)
+![image](https//github.com/SANGHANBO/SRCNN-tensorflow/tree/master/sample/orig.png)
 Bicubic interpolation:
-![](https//github.com/SANGHANBO/SRCNN-tensorflow/raw/master/sample/cubic.png)
+![image](https//github.com/SANGHANBO/SRCNN-tensorflow/tree/master/sample/cubic.png)
 srcnn super-resolved image:
-![](https//github.com/SANGHANBO/SRCNN-tensorflow/raw/master/sample/srcnn.png)
+![image](https//github.com/SANGHANBO/SRCNN-tensorflow/tree/master/sample/srcnn.png)
 
 Additionally, I notice that although the model with train_image generated in Python gains an average PSNR of around 29dB, 3dB lower than the above, but the 
 super-resolved effect is quite the same as it. In this case, I regard that the differ of the result is just the cause of different bottom structure in Python 
@@ -37,12 +37,12 @@ and MATLAB, and it's not a matter to apply the model in Python, although it gain
 Learning process
 ----------------
 This is the first time for me to build a deep CNN network with tensorflow, so it is absolutely a challenge for me. Fortunately, I make it and harvest a lot. 
-As a milestone for me, I record my learning step here. <br>
+As a milestone for me, I record my learning step here. <br><br>
 First, as I'm new to tensorflow, it's a must to learn the structure of it. From my view, it's a rather hard tackle compared to similar ones, such as Keras.
 It takes me about two days to follow the instruction in the Tensorflow Community and make quite clear about it. However, the summary and visualization in 
-tensorboard are still a puzzle to me, and it's my further work. <br>
+tensorboard are still a puzzle to me, and it's my further work. <br><br>
 Then, I begin to do pre-process of train image to make the input, such as interpolation and cropping sub-image from the origin. After that, I build my network. 
-I think pre-process of data is of great importance, and building model is relatively smooth. It takes three days altogether. <br>
+I think pre-process of data is of great importance, and building model is relatively smooth. It takes three days altogether. <br><br>
 Lastly, I run my model. To speed the training, I use GPU on Google Colaborator. This step consumes quite a lot time, because the result is 3dB lower than the 
 paper. After many trials on both Python and MATLAB, I find that the output of interpolation under these two structures are different, and I guess that this is 
 just the cause. So I generate training data from MATLAB, store them in h5py file which can be read in Python. The output gets a better PSNR, similar with the 

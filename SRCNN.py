@@ -59,8 +59,8 @@ def load_model(sess, path):
 '''
 def train(conv3):
     # 直接导入MATLAB中数据，并重组矩阵
-    train_dir = 'checkpoint/predata/train.h5'
-    valid_dir = 'checkpoint/predata/test.h5'
+    train_dir = 'train.h5'
+    valid_dir = 'test.h5'
     train_image, train_label = read_h5file(train_dir)    # N*1*33*33，N*1*21*21
     m, n, p, q = train_image.shape
     train_image = train_image.reshape(m, p, q, n)

@@ -24,11 +24,11 @@ Result
 With train_image imported from MATLAB, the average PSNR is 32.34dB, while 32.39 in paper. So my model works not bad. One sample is as follow.
 
 Original woman image: <br> 
-<div align=center> ![image](https://github.com/SANGHANBO/SRCNN-tensorflow/blob/master/sample/cubic.png) <br>
+![image](https://github.com/SANGHANBO/SRCNN-tensorflow/blob/master/sample/cubic.png) <br>
 Bicubic interpolation: <br> 
-<div align=center> ![image](https://github.com/SANGHANBO/SRCNN-tensorflow/blob/master/sample/cubic.png) <br> 
+![image](https://github.com/SANGHANBO/SRCNN-tensorflow/blob/master/sample/cubic.png) <br> 
 srcnn super-resolved image: <br> 
-<div align=center> ![image](https://github.com/SANGHANBO/SRCNN-tensorflow/blob/master/sample/srcnn.png) <br>
+![image](https://github.com/SANGHANBO/SRCNN-tensorflow/blob/master/sample/srcnn.png) <br>
 
 Additionally, I notice that although the model with train_image generated in Python gains an average PSNR of around 29dB, 3dB lower than the above, but the 
 super-resolved effect is quite the same as it. In this case, I regard that the differ of the result is just the cause of different bottom structure in Python 
